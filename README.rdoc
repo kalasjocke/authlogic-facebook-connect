@@ -18,7 +18,7 @@ For more information on the facebooker gem checkout it's readme http://github.co
 
   $ script/plugin install git://github.com/kalasjocke/authlogic_facebook_connect.git
   
-  The plugin should soon be packed inside a gem.
+This plugin should soon be packed inside a gem.
 
 === 3. Make some changes to your database
 
