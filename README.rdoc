@@ -6,7 +6,7 @@
 
 Make sure that you have setup you config/facebooker.yml to match your facebook application, make you application depended on the facebooker gem 
 
-  $ config.gem "facebooker"
+  config.gem "facebooker"
 
 and run the xd_receiver generator to create the cross domain scripting bridge to make it possible for your application to communicate with facebook
 
