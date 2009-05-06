@@ -10,7 +10,7 @@ Make sure that you have setup you config/facebooker.yml to match your facebook a
 
 and run the xd_receiver generator to create the cross domain scripting bridge to make it possible for your application to communicate with facebook
 
-  $ script/plugin xd_receiver
+  $ script/generate xd_receiver
 
 For more information on the facebooker gem checkout it's readme http://github.com/mmangino/facebooker/tree/master 
 
