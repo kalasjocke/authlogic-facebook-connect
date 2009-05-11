@@ -59,6 +59,11 @@ module AuthlogicFacebookConnect
       def authenticating_with_facebook_connect?
         attempted_record.nil? && errors.empty? && controller.facebook_session
       end
+
+      private
+      def facebook_uid_field
+        self.class.facebook_uid_field
+      end
     end
   end
 end
