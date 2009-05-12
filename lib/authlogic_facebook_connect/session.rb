@@ -47,8 +47,10 @@ module AuthlogicFacebookConnect
             self.attempted_record = klass.new(
               facebook_uid_field => facebook_session.user.uid)
 
-            # Save the user without validation as we may have validations for the user that are not met yet
-            self.attempted_record.save(false)
+            errors.add_to_base(
+              I18n.t('error_messages.facebook_user_creation_failed',
+                     :default => 'There was a problem creating a new user ' +
+                                 'for your Facebook account')) unless attempted_record.valid?
           rescue Facebooker::Session::SessionExpired
             errors.add_to_base(I18n.t('error_messages.facebooker_session_expired', 
               :default => "Your Facebook Connect session has expired, please reconnect."))
@@ -61,9 +63,9 @@ module AuthlogicFacebookConnect
       end
 
       private
-      def facebook_uid_field
-        self.class.facebook_uid_field
-      end
+        def facebook_uid_field
+          self.class.facebook_uid_field
+        end
     end
   end
 end
