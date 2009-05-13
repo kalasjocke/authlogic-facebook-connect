@@ -17,7 +17,7 @@ module AuthlogicFacebookConnect
       # * <tt>Default:</tt> :facebook_uid
       # * <tt>Accepts:</tt> Symbol
       def facebook_uid_field(value = nil)
-        config(:facebook_uid_field, value, :facebook_uid)
+        rw_config(:facebook_uid_field, value, :facebook_uid)
       end
       alias_method :facebook_uid_field=, :facebook_uid_field
     end
