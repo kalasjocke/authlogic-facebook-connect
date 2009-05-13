@@ -25,7 +25,7 @@ This plugin should soon be packed inside a gem.
   class AddFacebookConnectFieldsToUser < ActiveRecord::Migration
     def self.up
       add_column :users, :name, :string
-      add_column :users, :facebook_uid, :integer
+      add_column :users, :facebook_uid, :integer, :limit => 8
     end
   
     def self.down
