@@ -43,9 +43,12 @@ module AuthlogicFacebookConnect
 
         unless self.attempted_record
           begin
-            # Get the user from facebook and create a local user
-            self.attempted_record = klass.new(
-              facebook_uid_field => facebook_session.user.uid)
+            # Get the user from facebook and create a local user.
+            #
+            # We assign it after the call to new in case the attribute is protected.
+            new_user = klass.new
+            new_user.send(:"#{facebook_uid_field}=", facebook_session.user.uid)
+            self.attempted_record = new_user
 
             errors.add_to_base(
               I18n.t('error_messages.facebook_user_creation_failed',
