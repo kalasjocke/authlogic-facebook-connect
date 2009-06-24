@@ -62,6 +62,7 @@ module AuthlogicFacebookConnect
       end
 
       def authenticating_with_facebook_connect?
+        controller.set_facebook_session
         attempted_record.nil? && errors.empty? && controller.facebook_session
       end
 
