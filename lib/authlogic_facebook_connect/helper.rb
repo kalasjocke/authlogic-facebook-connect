@@ -10,7 +10,7 @@ module AuthlogicFacebookConnect
       output += "</form>\n"
       output += "<script type='text/javascript' charset='utf-8'>\n"
       output += " function connect_to_facebook() {\n"
-      output += "   $('#connect_to_facebook_form').submit();\n"
+      output += "   $('connect_to_facebook_form').submit();\n"
       output += " }\n"
       output += "</script>\n"
       options.delete(:controller)
