@@ -66,3 +66,14 @@ The important parts are the facebook html namespace, facebook javascript include
 === 5. Add the Facebook Connect button to your login form
 
   <%= authlogic_facebook_login_button %>
+
+=== Notes
+
+If you want to save some user data when connecting to facebook you can use the before_connect hook in your user model.
+
+  def before_connect(facebook_session)
+    self.name = facebook_session.user.name
+  end
+  
+For more information about what you can get form the facebook_session checkout the Facebooker gem rdoc. 
+  
