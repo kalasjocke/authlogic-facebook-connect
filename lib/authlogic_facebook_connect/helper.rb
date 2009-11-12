@@ -10,7 +10,7 @@ module AuthlogicFacebookConnect
       when :prototype
         js_selector = "$('connect_to_facebook_form')"
       when :jquery
-        js_selector = "jQuery(#connect_to_facebook_form)"
+        js_selector = "jQuery('#connect_to_facebook_form')"
       end
       
       output = "<form id='connect_to_facebook_form' method='post' action='/#{options[:controller]}'>\n"
