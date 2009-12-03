@@ -98,6 +98,8 @@ module AuthlogicFacebookConnect
             #
             # We assign it after the call to new in case the attribute is protected.
 
+            new_user = klass.new
+
             if klass == facebook_user_class
               new_user.send(:"#{facebook_uid_field}=", facebook_session.user.uid)
               new_user.send(:"#{facebook_session_key_field}=", facebook_session.session_key)
